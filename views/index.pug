@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+
+  if messages && messages.length
+    ul 
+      each message in messages 
+        li 
+          h2= message.user 
+          h4= message.text 
+          p= message.added
+    a(href="/new") ADD NEW MESSAGE
+  else
+    p No messages available
+
+  
